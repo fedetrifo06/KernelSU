@@ -112,7 +112,7 @@ int ksu_handle_setresuid(uid_t ruid, uid_t euid, uid_t suid)
         pr_info("install fd for manager: %d\n", new_uid);
         ksu_install_fd();
         spin_lock_irq(&current->sighand->siglock);
-        ksu_seccomp_allow_cache(current->seccomp.filter, __NR_reboot);
+        disable_seccomp(void);
         ksu_set_task_tracepoint_flag(current);
         spin_unlock_irq(&current->sighand->siglock);
         return 0;
