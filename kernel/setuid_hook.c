@@ -29,6 +29,7 @@
 #include <linux/version.h>
 
 #include "allowlist.h"
+#include "app_profile.h"
 #include "setuid_hook.h"
 #include "feature.h"
 #include "klog.h" // IWYU pragma: keep
